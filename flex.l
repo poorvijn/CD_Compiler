@@ -20,6 +20,8 @@ letter [a-zA-Z]
 "else"          { return ELSE; }
 "while"         { return WHILE; }
 [a-zA-Z_][a-zA-Z0-9_]* { return IDENTIFIER; }
+[0-9][0-9]*[.][0-9][0-9]* { return FLOAT_CONSTANT; }
+[0-9][0-9]*    { return INTEGER_CONSTANT; }
 "=="            { return EQ; }
 "!="            { return NEQ; }
 "<"             { return LT; }
@@ -38,6 +40,7 @@ letter [a-zA-Z]
 "}"             { return RBRACE; }
 "\""            { return STRING_CONSTANT; }
 '[^"\\]+'       { return STRING_CHARACTER; }
+"\\"            { return ESCAPE_SEQUENCE; }
 .               { /* ignore other characters */ }
 
 %%

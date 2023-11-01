@@ -5,6 +5,7 @@ extern FILE* yyin;
 %}
 
 %token COMMA IDENTIFIER UNION STRUCT STATIC CONST INT FLOAT CHAR DOUBLE BOOL RETURN IF ELSE WHILE EQ NEQ LT GT LTEQ GTEQ PLUS MINUS MULT DIV ASSIGN SEMICOLON LPAREN RPAREN LBRACE RBRACE STRING_CONSTANT STRING_CHARACTER
+%token INTEGER_CONSTANT FLOAT_CONSTANT ESCAPE_SEQUENCE
 %%
 program: struct_declaration { printf("Successful compilation\n"); exit(0) };
 struct_declaration: STRUCT identifier LBRACE member_list RBRACE SEMICOLON {printf("Entered here 1\n");}
@@ -91,7 +92,21 @@ term: factor
 
 factor: identifier
       | LPAREN expression RPAREN
+      | constant
       ;
+
+constant: integer_constant
+        | float_constant
+        | STRING_CONSTANT
+        ;
+
+integer_constant: INTEGER_CONSTANT
+                | MINUS INTEGER_CONSTANT
+                ;
+
+float_constant: FLOAT_CONSTANT
+              | MINUS FLOAT_CONSTANT
+            ;
 %%
 
 int yyerror(const char *msg) {

@@ -1,8 +1,8 @@
 struct a
 { 
     char a; 
-    int b;
+    float b=10.5;
     union c{
-        float d;
+        int d;
     };
 };
