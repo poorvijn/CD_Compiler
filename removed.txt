@@ -1,0 +1,15 @@
+%token INTEGER_CONSTANT CHAR_CONSTANT FLOAT_CONSTANT ESCAPE_SEQUENCE PRINTABLE_CHARACTER COMMA
+constant: integer_constant
+        | float_constant
+        | CHAR_CONSTANT
+        | STRING_CONSTANT
+        ;
+
+integer_constant: INTEGER_CONSTANT
+                | MINUS INTEGER_CONSTANT
+                ;
+
+float_constant: FLOAT_CONSTANT
+              | MINUS FLOAT_CONSTANT
+            ;
+"\n"            { return EOL; }
