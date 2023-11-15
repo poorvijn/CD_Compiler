@@ -15,6 +15,7 @@ struct a
         {
             int returnDiff()
             {
+                int xyz=10;
                 int exp=exp-1;
                 return exp;
             }
