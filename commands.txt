@@ -1,2 +1,14 @@
 C:\GnuWin32\bin
 C:\Program Files\CodeBlocks\MinGW\bin
+
+function_declaration: type identifier LPAREN parameter_list RPAREN LBRACE declarations statements RBRACE {printf("Reached func decl\n");}
+                  ;
+
+declarations: declaration {printf("Reached declarations\n");}
+            | declarations declaration
+            ;
+
+declaration: type identifier SEMICOLON {printf("Reached declaration\n");}
+           ;
+
+           | assignment_statement { printf("Entered assignment statement\n"); }

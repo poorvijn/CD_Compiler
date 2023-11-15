@@ -1,8 +1,23 @@
 struct a
-{ 
-    char a; 
-    float b=10.5;
-    union c{
-        int d;
+{
+    int e;
+    int d;
+    void sum()
+    {
+        int c;
+        c=e+1;
+    }
+
+    union _abc123
+    {
+        float exp;
+        struct a12
+        {
+            int returnDiff()
+            {
+                int exp=exp-1;
+                return exp;
+            }
+        };
     };
 };

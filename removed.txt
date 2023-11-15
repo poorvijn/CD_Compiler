@@ -13,3 +13,8 @@ float_constant: FLOAT_CONSTANT
               | MINUS FLOAT_CONSTANT
             ;
 "\n"            { return EOL; }
+
+To figure out:
+header file
+character constant
+strings
