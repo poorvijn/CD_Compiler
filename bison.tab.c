@@ -1494,139 +1494,20 @@ yyreduce:
 
 /* Line 1455 of yacc.c  */
 #line 10 "bison.y"
-    { printf("Successful compilation\n"); exit(0) ;}
+    { printf("Successful compilation"); exit(0) ;}
     break;
 
   case 3:
 
 /* Line 1455 of yacc.c  */
 #line 11 "bison.y"
-    { printf("Successful compilation\n"); exit(0) ;}
-    break;
-
-  case 4:
-
-/* Line 1455 of yacc.c  */
-#line 12 "bison.y"
-    {printf("Entered here 1\n");;}
-    break;
-
-  case 5:
-
-/* Line 1455 of yacc.c  */
-#line 13 "bison.y"
-    { printf("Entered here 2\n"); ;}
-    break;
-
-  case 6:
-
-/* Line 1455 of yacc.c  */
-#line 16 "bison.y"
-    {printf("Entered member declaration\n");;}
-    break;
-
-  case 11:
-
-/* Line 1455 of yacc.c  */
-#line 23 "bison.y"
-    {printf("Verified id here\n");;}
-    break;
-
-  case 15:
-
-/* Line 1455 of yacc.c  */
-#line 28 "bison.y"
-    {printf("Reached func decl\n");;}
-    break;
-
-  case 16:
-
-/* Line 1455 of yacc.c  */
-#line 30 "bison.y"
-    {printf("Reached declarations 1\n");;}
-    break;
-
-  case 19:
-
-/* Line 1455 of yacc.c  */
-#line 35 "bison.y"
-    {printf("Reached declaration definition 1\n");;}
-    break;
-
-  case 20:
-
-/* Line 1455 of yacc.c  */
-#line 36 "bison.y"
-    {printf("Reached declaration definition 2\n");;}
-    break;
-
-  case 24:
-
-/* Line 1455 of yacc.c  */
-#line 43 "bison.y"
-    {printf("Parameters ok\n");;}
-    break;
-
-  case 25:
-
-/* Line 1455 of yacc.c  */
-#line 46 "bison.y"
-    {printf("Reached statements\n");;}
-    break;
-
-  case 28:
-
-/* Line 1455 of yacc.c  */
-#line 51 "bison.y"
-    { printf("Entered expression in statement \n"); ;}
-    break;
-
-  case 51:
-
-/* Line 1455 of yacc.c  */
-#line 89 "bison.y"
-    { printf("Entered expression\n"); ;}
-    break;
-
-  case 53:
-
-/* Line 1455 of yacc.c  */
-#line 91 "bison.y"
-    { printf("Entered assignment statement\n"); ;}
-    break;
-
-  case 54:
-
-/* Line 1455 of yacc.c  */
-#line 94 "bison.y"
-    {printf("Reached assignment statement 1\n");;}
-    break;
-
-  case 55:
-
-/* Line 1455 of yacc.c  */
-#line 95 "bison.y"
-    {printf("Reached assignment statement 2\n");;}
-    break;
-
-  case 56:
-
-/* Line 1455 of yacc.c  */
-#line 97 "bison.y"
-    {printf("ID here\n");;}
-    break;
-
-  case 57:
-
-/* Line 1455 of yacc.c  */
-#line 100 "bison.y"
-    {printf("Union reached\n");;}
+    { printf("Successful compilation"); exit(0) ;}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1630 "bison.tab.c"
+#line 1511 "bison.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);

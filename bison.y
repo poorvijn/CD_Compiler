@@ -7,48 +7,48 @@ extern FILE* yyin;
 %token COMMA IDENTIFIER UNION STRUCT STATIC CONST INT FLOAT CHAR DOUBLE BOOL RETURN IF ELSE WHILE EQ NEQ LT GT LTEQ GTEQ PLUS MINUS MULT DIV ASSIGN SEMICOLON LPAREN RPAREN LBRACE RBRACE STRING_CONSTANT STRING_CHARACTER
 %token INTEGER_CONSTANT FLOAT_CONSTANT ESCAPE_SEQUENCE
 %%
-program: struct_declaration { printf("Successful compilation\n"); exit(0) };
-| union_declaration { printf("Successful compilation\n"); exit(0) };
-struct_declaration: STRUCT identifier LBRACE member_list RBRACE SEMICOLON {printf("Entered here 1\n");}
-|   STRUCT identifier SEMICOLON { printf("Entered here 2\n"); }
+program: struct_declaration { printf("Successful compilation"); exit(0) };
+| union_declaration { printf("Successful compilation"); exit(0) };
+struct_declaration: STRUCT identifier LBRACE member_list RBRACE SEMICOLON
+|   STRUCT identifier SEMICOLON
                   ;
 
-member_list: member_declaration {printf("Entered member declaration\n");}
+member_list: member_declaration
           | member_list member_declaration
           ;
 
 member_declaration: STATIC type identifier ASSIGN expression SEMICOLON
                   | CONST type identifier ASSIGN expression SEMICOLON
                   | type identifier ASSIGN expression SEMICOLON
-                  | type identifier SEMICOLON {printf("Verified id here\n");}
+                  | type identifier SEMICOLON
                   | function_declaration
                   | union_declaration
                   | struct_declaration
                   ;
-function_declaration: type identifier LPAREN parameter_list RPAREN LBRACE declarations statements RBRACE {printf("Reached func decl\n");}
+function_declaration: type identifier LPAREN parameter_list RPAREN LBRACE declarations statements RBRACE
                     ;
-declarations: declaration {printf("Reached declarations 1\n");}
+declarations: declaration
             | declarations declaration
             | /*empty*/
             ;
 
-declaration: type identifier SEMICOLON {printf("Reached declaration definition 1\n");}
-            |  type identifier ASSIGN expression SEMICOLON {printf("Reached declaration definition 2\n");}
+declaration: type identifier SEMICOLON
+            |  type identifier ASSIGN expression SEMICOLON
            ;
 parameter_list: parameter
               | parameter_list COMMA parameter
               | /*empty*/
               ;
 
-parameter: type identifier {printf("Parameters ok\n");}
+parameter: type identifier
          ;
 
-statements: statement {printf("Reached statements\n");}
+statements: statement 
           | statements statement
           | /*empty*/
           ;
 
-statement: expression SEMICOLON { printf("Entered expression in statement \n"); }
+statement: expression SEMICOLON
          | if_statement
          | while_statement
          | return_statement
@@ -86,18 +86,18 @@ type: INT
     ;
 
 expression: term
-          | expression PLUS term { printf("Entered expression\n"); }
+          | expression PLUS term 
           | expression MINUS term
-          | assignment_statement { printf("Entered assignment statement\n"); }
+          | assignment_statement
           ;
 
-assignment_statement: identifier ASSIGN expression {printf("Reached assignment statement 1\n");}
-          | type identifier ASSIGN expression {printf("Reached assignment statement 2\n");}
+assignment_statement: identifier ASSIGN expression
+          | type identifier ASSIGN expression 
 
-identifier: IDENTIFIER {printf("ID here\n");}
+identifier: IDENTIFIER 
           ;
 
-union_declaration: UNION identifier LBRACE member_list RBRACE SEMICOLON {printf("Union reached\n");}
+union_declaration: UNION identifier LBRACE member_list RBRACE SEMICOLON 
                   ;
 
 term: factor
