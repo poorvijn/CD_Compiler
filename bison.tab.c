@@ -1728,7 +1728,7 @@ int yyerror(const char *msg) {
 }
 
 int main() {
-    yyin=fopen("input.cpp","r");
+    yyin=fopen("input_invalid.cpp","r");
     yyparse();
     return 0;
 }
